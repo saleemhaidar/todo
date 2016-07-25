@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-app="todo">
+    <div ng-controller="homeController as home">
+      <h1>
+        <span ng-show="home.todos.length !=0">
+        {{home.message}} {{home.todos.length}}
+        </span>
+      </h1>
+      <h1 ng-show="home.todos.length == 0">
+        Nothing todo!
+      </h1>
+      <h3 ng-repeat="todo in home.todos">
+        <span ng-class="todo.checked ? 'text-muted':'h3'">
+          <span ng-click="todo.checked = !todo.checked">
+            {{todo.name}} {{todo.checked}}
+          </span>
+        </span>
+      </h3>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
